@@ -275,4 +275,27 @@ public class StringUtils {
         }
         return charset.decode(data).toString();
     }
+
+    /**
+     * 以spliter链接strs
+     * @param spliter
+     * @param strs
+     * @return
+     */
+    public static String join(String spliter, String ...strs) {
+        if (strs.length == 0 || spliter == null) {
+            return "";
+        }
+        if (strs.length == 1) {
+            return strs[0];
+        }
+        StringBuilder sBuilder = new StringBuilder();
+        for (String per : strs) {
+            if (sBuilder.length() > 0) {
+                sBuilder.append(spliter);
+            }
+            sBuilder.append(per);
+        }
+        return sBuilder.toString();
+    }
 }
