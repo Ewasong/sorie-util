@@ -1,33 +1,22 @@
 package top.sorie.util.core.exception;
 
 /**
- * 工具异常
- * @author soriee
- * @date 2021/10/21 22:59
+ * 工具类异常
+ *
+ * @author sorie
  */
 public class UtilException extends RuntimeException {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 8247610319171014183L;
 
     public UtilException(Throwable e) {
-        super(e);
+        super(e.getMessage(), e);
     }
 
-    // todo
-    public UtilException(String msgTemplate, Object ...pararms) {
-        super();
+    public UtilException(String message) {
+        super(message);
     }
 
-    public UtilException(String msg) {
-        super(msg);
-    }
-
-    public UtilException(String msg, Throwable e) {
-        super(msg, e);
-    }
-
-    public UtilException(String message, Throwable cause,
-                               boolean enableSuppression,
-                               boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+    public UtilException(String message, Throwable throwable) {
+        super(message, throwable);
     }
 }

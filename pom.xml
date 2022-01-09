@@ -10,6 +10,8 @@
     <version>0.0.1</version>
     <modules>
         <module>sorie-util-core</module>
+        <module>sorie-util-mybatis</module>
+        <module>sorie-util-spring</module>
     </modules>
 
     <properties>
@@ -20,23 +22,13 @@
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
         <!-- versions -->
         <compile.version>8</compile.version>
-        <junit.version>5.8.1</junit.version>
+        <junit.version>5.8.2</junit.version>
         <lombok.version>1.18.22</lombok.version>
         <spring-boot.version>2.5.5</spring-boot.version>
+        <mockito.version>4.2.0</mockito.version>
+        <pagehelper.boot.version>1.4.0</pagehelper.boot.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -45,6 +37,16 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>top.sorie</groupId>
+                <artifactId>sorie-util-core</artifactId>
+                <version>${sorie-util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.sorie</groupId>
+                <artifactId>sorie-util-spring</artifactId>
+                <version>${sorie-util.version}</version>
+            </dependency>
             <!-- SpringBoot 依赖配置 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -52,6 +54,24 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
